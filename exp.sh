@@ -1,6 +1,7 @@
 #!/bin/bash
 # exp.sh: launch experiment on IoT-lab, log & retrieve results from server
 
+set -e
 # Test arguments
 if [ "$#" -ne 4 ]; then
 	echo "Usage: $0 <interval (s)> <payload size (B)> <exp duration (m)> <list of nodes>"
