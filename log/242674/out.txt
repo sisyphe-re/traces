@@ -1,0 +1,237 @@
+1610371641.629583;Aggregator started
+1610371649.121484;m3-98;
+1610371649.121956;m3-98;
+1610371649.251507;m3-99;�
+1610371649.251833;m3-99;
+1610371650.122210;m3-98;Platform starting in 1... 
+1610371650.122565;m3-98;GO!
+1610371650.124128;m3-98;[in clock_init() DEBUG] Starting systick timer at 100Hz
+1610371650.125843;m3-98; Starting 'UDP broadcast example process'
+1610371650.252305;m3-99;Platform starting in 1... 
+1610371650.252576;m3-99;GO!
+1610371650.253062;m3-99;[in clock_init() DEBUG] Starting systick timer at 100Hz
+1610371650.256208;m3-99; Starting 'UDP broadcast example process'
+1610371655.424888;m3-98;Sending broadcast
+1610371658.574069;m3-99;Sending broadcast
+1610371658.585424;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371660.865500;m3-98;Sending broadcast
+1610371660.883570;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371661.966246;m3-99;Sending broadcast
+1610371661.975043;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371666.264685;m3-98;Sending broadcast
+1610371666.275181;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371669.615948;m3-99;Sending broadcast
+1610371669.628782;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371670.274116;m3-99;Sending broadcast
+1610371670.287263;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371673.794441;m3-98;Sending broadcast
+1610371673.806802;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371676.566635;m3-99;Sending broadcast
+1610371676.574933;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371677.684189;m3-98;Sending broadcast
+1610371677.694405;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371682.586034;m3-99;Sending broadcast
+1610371682.599045;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371685.083903;m3-98;Sending broadcast
+1610371685.097626;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371686.354183;m3-99;Sending broadcast
+1610371686.368456;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371687.205526;m3-98;Sending broadcast
+1610371693.555854;m3-98;Sending broadcast
+1610371693.587700;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371694.854493;m3-99;Sending broadcast
+1610371694.865035;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371695.584072;m3-98;Sending broadcast
+1610371698.615196;m3-99;Sending broadcast
+1610371698.628708;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371700.734935;m3-99;Sending broadcast
+1610371700.744748;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371701.063957;m3-98;Sending broadcast
+1610371701.077109;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371708.736533;m3-99;Sending broadcast
+1610371708.768805;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371709.083976;m3-98;Sending broadcast
+1610371710.406302;m3-99;Sending broadcast
+1610371710.416788;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371710.614484;m3-98;Sending broadcast
+1610371710.624631;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371717.754902;m3-99;Sending broadcast
+1610371717.765491;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371718.544462;m3-98;Sending broadcast
+1610371718.555747;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371722.054289;m3-98;Sending broadcast
+1610371722.065832;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371723.614900;m3-99;Sending broadcast
+1610371723.654128;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371726.674315;m3-98;Sending broadcast
+1610371726.685020;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371727.754893;m3-99;Sending broadcast
+1610371727.792978;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371731.454332;m3-99;Sending broadcast
+1610371731.474440;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371733.304462;m3-98;Sending broadcast
+1610371733.316331;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371739.216782;m3-99;Sending broadcast
+1610371739.227853;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371740.024260;m3-98;Sending broadcast
+1610371740.037576;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371740.374208;m3-98;Sending broadcast
+1610371740.386485;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371743.785452;m3-99;Sending broadcast
+1610371743.795227;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371747.953451;m3-98;Sending broadcast
+1610371747.968461;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371748.395313;m3-99;Sending broadcast
+1610371748.405174;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371751.044193;m3-98;Sending broadcast
+1610371751.054783;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371754.126656;m3-99;Sending broadcast
+1610371754.136644;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371755.255625;m3-99;Sending broadcast
+1610371757.283874;m3-98;Sending broadcast
+1610371757.297500;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371762.853350;m3-98;Sending broadcast
+1610371762.865329;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371764.335224;m3-99;Sending broadcast
+1610371764.352124;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371768.095469;m3-98;Sending broadcast
+1610371768.106883;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371769.995633;m3-99;Sending broadcast
+1610371770.008583;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371771.615353;m3-99;Sending broadcast
+1610371771.625625;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371772.054183;m3-98;Sending broadcast
+1610371772.064691;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371779.604500;m3-98;Sending broadcast
+1610371779.614528;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371779.815045;m3-99;Sending broadcast
+1610371779.850423;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371781.046431;m3-99;Sending broadcast
+1610371781.083255;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371781.424039;m3-98;Sending broadcast
+1610371781.434719;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371790.094456;m3-99;Sending broadcast
+1610371790.094828;m3-98;Sending broadcast
+1610371790.107638;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371790.145344;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371790.693595;m3-98;Sending broadcast
+1610371794.155450;m3-99;Sending broadcast
+1610371794.166624;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371797.685405;m3-99;Sending broadcast
+1610371799.754794;m3-98;Sending broadcast
+1610371799.775799;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371800.654791;m3-99;Sending broadcast
+1610371800.665775;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371804.014515;m3-98;Sending broadcast
+1610371804.028733;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371809.665573;m3-98;Sending broadcast
+1610371809.675993;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371809.745151;m3-99;Sending broadcast
+1610371809.758591;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371812.785241;m3-99;Sending broadcast
+1610371812.795907;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371814.475092;m3-98;Sending broadcast
+1610371814.487626;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371817.474246;m3-98;Sending broadcast
+1610371817.493227;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371817.936865;m3-99;Sending broadcast
+1610371817.948282;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371821.916963;m3-99;Sending broadcast
+1610371821.939773;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371823.073777;m3-98;Sending broadcast
+1610371823.087357;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371828.155727;m3-98;Sending broadcast
+1610371828.196714;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371828.684969;m3-99;Sending broadcast
+1610371828.720697;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371830.334819;m3-99;Sending broadcast
+1610371830.375968;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371834.593549;m3-98;Sending broadcast
+1610371834.615656;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371838.104327;m3-98;Sending broadcast
+1610371838.118067;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371839.546547;m3-99;Sending broadcast
+1610371839.556078;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371841.954265;m3-98;Sending broadcast
+1610371841.965223;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371843.335020;m3-99;Sending broadcast
+1610371847.805803;m3-99;Sending broadcast
+1610371847.818545;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371848.803689;m3-98;Sending broadcast
+1610371848.815642;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371851.955936;m3-98;Sending broadcast
+1610371851.964162;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371854.316709;m3-99;Sending broadcast
+1610371854.328046;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371857.295997;m3-99;Sending broadcast
+1610371859.914084;m3-98;Sending broadcast
+1610371859.925040;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371860.393737;m3-98;Sending broadcast
+1610371860.409741;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371861.604829;m3-99;Sending broadcast
+1610371861.615567;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371867.964233;m3-98;Sending broadcast
+1610371867.977131;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371868.865407;m3-99;Sending broadcast
+1610371868.878134;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371871.825857;m3-99;Sending broadcast
+1610371871.836042;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371875.013913;m3-98;Sending broadcast
+1610371875.024599;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371876.697373;m3-99;Sending broadcast
+1610371876.707065;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371878.803642;m3-98;Sending broadcast
+1610371878.814808;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371881.453782;m3-98;Sending broadcast
+1610371881.467325;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371882.336468;m3-99;Sending broadcast
+1610371882.355298;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371886.196013;m3-99;Sending broadcast
+1610371886.227338;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371887.973935;m3-98;Sending broadcast
+1610371887.985026;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371893.147785;m3-99;Sending broadcast
+1610371893.158467;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371894.963318;m3-98;Sending broadcast
+1610371894.974928;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371895.503675;m3-98;Sending broadcast
+1610371895.514407;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371899.256344;m3-99;Sending broadcast
+1610371899.300670;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371902.425285;m3-98;Sending broadcast
+1610371902.433864;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371903.345105;m3-99;Sending broadcast
+1610371903.381106;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371908.093781;m3-98;Sending broadcast
+1610371908.107651;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371908.395663;m3-99;Sending broadcast
+1610371908.406675;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371911.893345;m3-98;Sending broadcast
+1610371911.903438;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371912.826163;m3-99;Sending broadcast
+1610371912.836112;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371917.635262;m3-99;Sending broadcast
+1610371917.675574;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371920.103896;m3-98;Sending broadcast
+1610371921.873829;m3-98;Sending broadcast
+1610371921.886742;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371922.287032;m3-99;Sending broadcast
+1610371922.297231;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371925.773533;m3-98;Sending broadcast
+1610371925.786317;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371929.465681;m3-99;Sending broadcast
+1610371934.467935;m3-99;Sending broadcast
+1610371934.785434;m3-98;Sending broadcast
+1610371934.805876;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371936.244351;m3-98;Sending broadcast
+1610371936.275376;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371937.105888;m3-99;Sending broadcast
+1610371937.145268;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371942.437722;m3-99;Sending broadcast
+1610371942.455776;m3-98;Data received on port 1234 from port 1234 with length 5
+1610371943.683537;m3-98;Sending broadcast
+1610371943.697318;m3-99;Data received on port 1234 from port 1234 with length 5
+1610371945.522440;m3-98;Connection closed
+1610371945.542529;m3-99;Connection closed
+1610371945.542876;Loop finished, all connection closed
+1610371945.543289;Stopping
