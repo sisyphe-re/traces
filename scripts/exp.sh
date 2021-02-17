@@ -11,7 +11,7 @@ fi
 #---------------------- TEST ARGUMENTS ----------------------#
 
 #--------------------- DEFINE VARIABLES ---------------------#
-LOGIN="santi"
+LOGIN="yourlogin"
 SITE="lille"
 IOTLAB="$LOGIN@$SITE.iot-lab.info"
 CODEDIR="${HOME}/traces/iot-lab/parts/contiki/examples/ipv6/simple-udp-rpl"
