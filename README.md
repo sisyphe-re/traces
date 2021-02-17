@@ -1,4 +1,4 @@
-# Tools for generating 
+# How to generate application traces with FIT IoT-LAB 
 
 This project contain :
 * A script to launch an experiment on the FIT IoT-LAB testbed and store the results on your computer
