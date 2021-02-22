@@ -63,7 +63,7 @@ Parameters :
 * payload size (b): the payload size in bytes
 * exp duration (m): the experiment duration in minutes
 * nb packets: the number of packets send each time, useful when you want to send more than one packet per seconds
-* list of nodes: the list of nodes for the experiment, you can find useful examples [here](https://www.iot-lab.info/docs/tools/cli/#experiment-command), **be aware that the site in your node list and in the script must be the same**
+* list of nodes: the list of nodes for the experiment, you can find useful examples [here](https://www.iot-lab.info/docs/tools/cli/#experiment-command). **Be aware that the site in your node list and in the script must be the same**
 
 Example : 
 
