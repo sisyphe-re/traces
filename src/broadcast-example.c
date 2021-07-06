@@ -35,18 +35,24 @@
 #include "sys/ctimer.h"
 #include "sys/etimer.h"
 #include "net/ip/uip.h"
+#include "dev/serial-line.h"
 #include "net/ipv6/uip-ds6.h"
 
 #include "simple-udp.h"
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <inttypes.h>
 
 #define UDP_PORT 1234
 
-#define SEND_BUFFER_SIZE 12
+#define BEGIN_INTERVAL_SECONDS 10 
+#define BEGIN_INTERVAL  (BEGIN_INTERVAL_SECONDS * CLOCK_SECOND)
+
+#define NB_PACKETS 5
+
+#define SEND_BUFFER_SIZE 60
 #define SEND_INTERVAL_SECONDS 6
 #define SEND_INTERVAL		(SEND_INTERVAL_SECONDS * CLOCK_SECOND)
 #define SEND_TIME		(random_rand() % (SEND_INTERVAL))
@@ -66,34 +72,56 @@ receiver(struct simple_udp_connection *c,
          const uint8_t *data,
          uint16_t datalen)
 {
-  printf("Data received on port %d from port %d with length %d\n",
-         receiver_port, sender_port, datalen);
+  printf("Received;%s\n",
+         data);
 }
 /*---------------------------------------------------------------------------*/
 PROCESS_THREAD(broadcast_example_process, ev, data)
 {
   static struct etimer periodic_timer;
+  char send_buffer[SEND_BUFFER_SIZE];
+  static struct etimer begin_timer;
   static struct etimer send_timer;
   uip_ipaddr_t addr;
+  unsigned long id;
+  static unsigned long nid;
+  char *eptr;
+  int i;
 
   PROCESS_BEGIN();
 
   simple_udp_register(&broadcast_connection, UDP_PORT,
                       NULL, UDP_PORT,
                       receiver);
+  clock_init();
 
-	char send_buffer[SEND_BUFFER_SIZE];
+  PROCESS_YIELD();
+  if (ev == serial_line_event_message) {
+    nid = strtoul((char*)data, &eptr, 10);
+  }
+
+  etimer_set(&begin_timer, BEGIN_INTERVAL);
+  PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&begin_timer));
+
+  printf("Node id : %lu\n", nid);
 
   etimer_set(&periodic_timer, SEND_INTERVAL);
   while(1) {
+
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&periodic_timer));
     etimer_reset(&periodic_timer);
     etimer_set(&send_timer, SEND_TIME);
 
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&send_timer));
-    printf("Sending broadcast\n");
-    uip_create_linklocal_allnodes_mcast(&addr);
-    simple_udp_sendto(&broadcast_connection, send_buffer, SEND_BUFFER_SIZE, &addr);
+
+    id = nid + clock_seconds();
+    for (i=0; i<NB_PACKETS; i++) {
+    	snprintf(send_buffer, sizeof(unsigned long)*8, "%lu", id+i);
+    	printf("Sending broadcast;%s\n", send_buffer);
+    	uip_create_linklocal_allnodes_mcast(&addr);
+    	simple_udp_sendto(&broadcast_connection, send_buffer, SEND_BUFFER_SIZE, &addr);
+    }
+
   }
 
   PROCESS_END();

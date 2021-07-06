@@ -14,7 +14,7 @@ fi
 LOGIN="yourlogin"
 SITE="lille"
 IOTLAB="$LOGIN@$SITE.iot-lab.info"
-CODEDIR="${HOME}/traces/iot-lab/parts/contiki/examples/ipv6/simple-udp-rpl"
+CODEDIR="${HOME}/iot-lab/parts/contiki/examples/ipv6/simple-udp-rpl"
 EXPDIR="${HOME}/traces"
 #--------------------- DEFINE VARIABLES ---------------------#
 
@@ -40,26 +40,41 @@ make TARGET=iotlab-m3 -j8 || { echo "Compilation failed."; exit 1; }
 #--------------------- COMPILE FIRMWARE ---------------------#
 
 #-------------------- LAUNCH EXPERIMENTS --------------------#
-
 cd $EXPDIR/scripts
-# Launch the experiment and obtain its ID
-EXPID=$(iotlab-experiment submit -n $1 -d $4 -l $6 --site-association $SITE,script=serial_script.sh | grep id | cut -d' ' -f6)
 
+# Launch the experiment and obtain its ID
+EXPID=$(iotlab-experiment submit -n $1 -d $4 -l $6 | grep id | cut -d' ' -f6)
 # Wait for the experiment to began
 iotlab-experiment wait -i $EXPID
-
 # Flash nodes
 iotlab-node --flash $CODEDIR/broadcast-example.iotlab-m3 -i $EXPID 
 
+# Wait for contiki
+sleep 10
+
+# Get nodes list 
+NODES=$(iotlab-experiment get -d -i $EXPID | jq '.[]' | jq @sh)
+
+# Send them a random id
+for i in $NODES
+do
+    n=$(tr -d "'\"" <<< $i)
+    nc -q1 $n 20000 <<< $RANDOM
+done
+
+# Run a script for logging 
+iotlab-experiment script -i $EXPID --run $SITE,script=serial_script.sh
 # Wait for experiment termination
 iotlab-experiment wait -i $EXPID --state Terminated
 #-------------------- LAUNCH EXPERIMENTS --------------------#
 
 
 #----------------------- RETRIEVE LOG -----------------------#
-ssh $IOTLAB "tar -C ~/.iot-lab/${EXPID}/ -cvzf $1.tar.gz serial_output" 
+#ssh $IOTLAB "tar -C ~/.iot-lab/${EXPID}/ -cvzf $1.tar.gz serial_output" 
+tar -C ~/.iot-lab/${EXPID}/ -cvzf ~/$1.tar.gz serial_output
 mkdir $EXPDIR/log/$EXPID
-scp "$IOTLAB":~/$1.tar.gz $EXPDIR/log/$EXPID/$1.tar.gz
+#scp "$IOTLAB":~/$1.tar.gz $EXPDIR/log/$EXPID/$1.tar.gz
+cp ~/$1.tar.gz $EXPDIR/log/$EXPID/$1.tar.gz
 cd $EXPDIR/log/$EXPID/
 tar -xvf $1.tar.gz 
 #----------------------- RETRIEVE LOG -----------------------#
