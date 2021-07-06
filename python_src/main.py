@@ -56,7 +56,10 @@ def parseLog(log_filename):
             timestamp = float(split[0])*1000 # Convert in milliseconds
             name = split[1]
             msg = split[2]
-            msg_id = int(split[3])
+            try : 
+                msg_id = int(split[3])
+            except : 
+                msg_id = int(split[3], 16)
 
             # If we find a new node
             if not name in nodes_dict:
