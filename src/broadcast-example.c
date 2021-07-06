@@ -59,6 +59,11 @@
 
 static struct simple_udp_connection broadcast_connection;
 
+// *Really* minimal PCG32 code / (c) 2014 M.E. O'Neill / pcg-random.org
+// Licensed under Apache License 2.0 (NO WARRANTY, etc. see website)
+typedef struct { uint64_t state;  uint64_t inc; } pcg32_random_t;
+//
+
 /*---------------------------------------------------------------------------*/
 PROCESS(broadcast_example_process, "UDP broadcast example process");
 AUTOSTART_PROCESSES(&broadcast_example_process);
@@ -75,16 +80,42 @@ receiver(struct simple_udp_connection *c,
   printf("Received;%s\n",
          data);
 }
+
+// *Really* minimal PCG32 code / (c) 2014 M.E. O'Neill / pcg-random.org
+// Licensed under Apache License 2.0 (NO WARRANTY, etc. see website)
+static uint32_t 
+pcg32_random_r(pcg32_random_t* rng)
+{
+    uint64_t oldstate = rng->state;
+    rng->state = oldstate * 6364136223846793005ULL + rng->inc;
+    uint32_t xorshifted = ((oldstate >> 18u) ^ oldstate) >> 27u;
+    uint32_t rot = oldstate >> 59u;
+    return (xorshifted >> rot) | (xorshifted << ((-rot) & 31));
+}
+
+static void 
+pcg32_srandom_r(pcg32_random_t* rng, 
+		uint64_t initstate, 
+		uint64_t initseq)
+{
+    rng->state = 0U;
+    rng->inc = (initseq << 1u) | 1u;
+    pcg32_random_r(rng);
+    rng->state += initstate;
+    pcg32_random_r(rng);
+}
+//
 /*---------------------------------------------------------------------------*/
 PROCESS_THREAD(broadcast_example_process, ev, data)
 {
+  static unsigned long initstate, initseq;
   static struct etimer periodic_timer;
   char send_buffer[SEND_BUFFER_SIZE];
   static struct etimer begin_timer;
   static struct etimer send_timer;
+  static pcg32_random_t rng;
   uip_ipaddr_t addr;
-  unsigned long id;
-  static unsigned long nid;
+  uint32_t id;
   char *eptr;
   int i;
 
@@ -97,13 +128,20 @@ PROCESS_THREAD(broadcast_example_process, ev, data)
 
   PROCESS_YIELD();
   if (ev == serial_line_event_message) {
-    nid = strtoul((char*)data, &eptr, 10);
+    initstate = strtoul((char*)data, &eptr, 10);
+  }
+
+  PROCESS_YIELD();
+  if (ev == serial_line_event_message) {
+    initseq = strtoul((char*)data, &eptr, 10);
   }
 
   etimer_set(&begin_timer, BEGIN_INTERVAL);
   PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&begin_timer));
 
-  printf("Node id : %lu\n", nid);
+  printf("Init state : %lu\n", initstate);
+  printf("Init seq : %lu\n", initseq);
+  pcg32_srandom_r(&rng, initstate, initseq);
 
   etimer_set(&periodic_timer, SEND_INTERVAL);
   while(1) {
@@ -114,9 +152,10 @@ PROCESS_THREAD(broadcast_example_process, ev, data)
 
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&send_timer));
 
-    id = nid + clock_seconds();
+    //id = nid * clock_seconds();
+    id = pcg32_random_r(&rng);
     for (i=0; i<NB_PACKETS; i++) {
-    	snprintf(send_buffer, sizeof(unsigned long)*8, "%lu", id+i);
+    	snprintf(send_buffer, sizeof(uint32_t)*8, "%lx", id+i);
     	printf("Sending broadcast;%s\n", send_buffer);
     	uip_create_linklocal_allnodes_mcast(&addr);
     	simple_udp_sendto(&broadcast_connection, send_buffer, SEND_BUFFER_SIZE, &addr);

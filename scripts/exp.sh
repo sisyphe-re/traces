@@ -55,11 +55,18 @@ sleep 10
 # Get nodes list 
 NODES=$(iotlab-experiment get -d -i $EXPID | jq '.[]' | jq @sh)
 
-# Send them a random id
+# Send nodes a init seed 
 for i in $NODES
 do
     n=$(tr -d "'\"" <<< $i)
     nc -q1 $n 20000 <<< $RANDOM
+done
+sleep 1
+# Send nodes a seq seed 
+for i in $NODES
+do
+    n=$(tr -d "'\"" <<< $i)
+    nc -q1 $n 20000 <<< $RANDOM 
 done
 
 # Run a script for logging 
