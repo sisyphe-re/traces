@@ -13,6 +13,11 @@ Each nodes will write on the output the packet send or received. Then all nodes 
 
 ### Prerequisite steps
 
+#### Dependencies 
+
+* jq:1.5-1
+* gcc:8.3.0
+
 #### Set environment
 
 *You must have FIT IoT lab credentials, you can register [here](https://www.iot-lab.info/testbed/signup).*
@@ -49,7 +54,6 @@ Modify the variables in the script according to your environment :
 * SITE: the site where you want to experiment, here you can find a description of each site : [grenoble](https://www.iot-lab.info/docs/deployment/grenoble/), [lille](https://www.iot-lab.info/docs/deployment/lille/), [lyon](https://www.iot-lab.info/docs/deployment/grenoble/), [saclay](https://www.iot-lab.info/docs/deployment/saclay/), [strasbourg](https://www.iot-lab.info/docs/deployment/saclay/)
 * CODEDIR: the absolute path to the firmware (path/to/iot-lab/parts/contiki/examples/ipv6/simple-udp-rpl/broadcast-example.c)
 * EXPDIR: the absolute path of this project's root, used to store log and retrieve scripts 
-
 
 ### Usage 
 
