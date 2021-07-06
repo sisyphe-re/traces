@@ -184,7 +184,7 @@ if __name__ == "__main__":
     exp_name = sys.argv[2]
 
     nodes_list = parseLog(log_filename)
-    packetDeliveryRatio(nodes_list)
+    #packetDeliveryRatio(nodes_list)
     averageTransmissionLatency(nodes_list)
 
     beautifyData(exp_name, nodes_list)

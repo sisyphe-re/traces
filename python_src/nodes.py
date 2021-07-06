@@ -170,7 +170,8 @@ def averageTransmissionLatency(nodes_list):
     """
     for n in nodes_list:
         n.sucess = 0 # Nb of time a transmitted msg has been successfully received by a node
-        latency = 0 # Total latency of the transmitted message by node n
+        latency  = 0 # Total latency of the transmitted message by node n
+        n.pdr    = 0 
 
         # For all transmitted msg of node n
         for tx in n.list_tx:
@@ -190,5 +191,7 @@ def averageTransmissionLatency(nodes_list):
         if n.success:
             # We compute the average transmission latency by nodes
             n.latency = latency / n.success 
+            n.pdr     =  len(n.list_tx) / n.success * 100
+        
 
 
