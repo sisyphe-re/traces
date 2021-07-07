@@ -59,14 +59,14 @@ NODES=$(iotlab-experiment get -d -i $EXPID | jq '.[]' | jq @sh)
 for i in $NODES
 do
     n=$(tr -d "'\"" <<< $i)
-    nc -q1 $n 20000 <<< $RANDOM
+    socat -T1 - TCP:$n:20000 <<< $RANDOM
 done
 sleep 1
 # Send nodes a seq seed 
 for i in $NODES
 do
     n=$(tr -d "'\"" <<< $i)
-    nc -q1 $n 20000 <<< $RANDOM 
+    socat -T1 - TCP:$n:20000 <<< $RANDOM
 done
 
 # Run a script for logging 

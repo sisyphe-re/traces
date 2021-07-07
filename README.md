@@ -17,7 +17,7 @@ Each nodes will write on the output the packet send or received. Then all nodes 
 
 * jq:1.5-1
 * gcc:8.3.0
-* netcat-traditional:1.10-41.1 
+* socat:1.7.3.2 
 
 #### Set environment
 
