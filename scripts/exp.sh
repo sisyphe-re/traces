@@ -48,28 +48,9 @@ EXPID=$(iotlab-experiment submit -n $1 -d $4 -l $6 | grep id | cut -d' ' -f6)
 iotlab-experiment wait -i $EXPID
 # Flash nodes
 iotlab-node --flash $CODEDIR/broadcast-example.iotlab-m3 -i $EXPID 
-
 # Wait for contiki
 sleep 10
-
-# Get nodes list 
-NODES=$(iotlab-experiment get -d -i $EXPID | jq '.[]' | jq @sh)
-
-# Send nodes a init seed 
-for i in $NODES
-do
-    n=$(tr -d "'\"" <<< $i)
-    socat -T1 - TCP:$n:20000 <<< $RANDOM
-done
-sleep 1
-# Send nodes a seq seed 
-for i in $NODES
-do
-    n=$(tr -d "'\"" <<< $i)
-    socat -T1 - TCP:$n:20000 <<< $RANDOM
-done
-
-# Run a script for logging 
+# Run a script for logging and seeding
 iotlab-experiment script -i $EXPID --run $SITE,script=serial_script.sh
 # Wait for experiment termination
 iotlab-experiment wait -i $EXPID --state Terminated
@@ -77,11 +58,9 @@ iotlab-experiment wait -i $EXPID --state Terminated
 
 
 #----------------------- RETRIEVE LOG -----------------------#
-#ssh $IOTLAB "tar -C ~/.iot-lab/${EXPID}/ -cvzf $1.tar.gz serial_output" 
-tar -C ~/.iot-lab/${EXPID}/ -cvzf ~/$1.tar.gz serial_output
+ssh $IOTLAB "tar -C ~/.iot-lab/${EXPID}/ -cvzf $1.tar.gz serial_output" 
 mkdir $EXPDIR/log/$EXPID
-#scp "$IOTLAB":~/$1.tar.gz $EXPDIR/log/$EXPID/$1.tar.gz
-cp ~/$1.tar.gz $EXPDIR/log/$EXPID/$1.tar.gz
+scp "$IOTLAB":~/$1.tar.gz $EXPDIR/log/$EXPID/$1.tar.gz
 cd $EXPDIR/log/$EXPID/
 tar -xvf $1.tar.gz 
 #----------------------- RETRIEVE LOG -----------------------#
